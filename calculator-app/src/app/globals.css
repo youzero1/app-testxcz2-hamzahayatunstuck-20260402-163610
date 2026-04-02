@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 30, 41, 59;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.calculator-btn {
+  @apply flex items-center justify-center rounded-2xl text-xl font-semibold
+    cursor-pointer select-none transition-all duration-150 active:scale-95
+    shadow-lg;
+}
+
+.calculator-btn:hover {
+  filter: brightness(1.15);
+}
+
+.calculator-btn:active {
+  filter: brightness(0.9);
+  transform: scale(0.95);
+}
